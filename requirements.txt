@@ -1,0 +1,6 @@
+﻿altair<5
+joblib==1.2.0
+pandas==1.5.0
+mal-api==0.5.2
+requests==2.28.1
+streamlit==1.19.0
