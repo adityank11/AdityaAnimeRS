@@ -1,6 +1,7 @@
 import streamlit as st
 from mal import Anime
 import joblib
+import pickle
 st.set_page_config(layout="wide")
 
 def fetch_poster(anime_id):
@@ -22,7 +23,8 @@ def recommend(anime):
 
 
 st.title('Anime Recommendation System')
-animes = joblib.load('assets/anime_list.joblib')
+# animes = joblib.load('assets/anime_list.joblib')
+animes = pickle.load(open('assets/anime_list.pkl','rb'))
 similarity = joblib.load('assets/similarity2.joblib')
 anime_list = animes['Name'].values
 selected_anime = st.selectbox("Type or select an anime from the dropdown",anime_list)
